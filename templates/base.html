@@ -1,0 +1,115 @@
+{% if not fragment %}
+<!doctype html>
+<html lang="{{ s.languages[lang].html_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% endif %}
+<title>{% if fragment %}Annuit Site Prototype{% else %}{% block title %}{{ t.meta.site_title }}{% endblock %}{% endif %}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="{{ t.meta.description }}">
+{% for code in s.languages %}
+<link rel="alternate" hreflang="{{ s.languages[code].html_lang }}" href="https://{{ s.domain }}/{{ '' if code == s.default_lang else code ~ '/' }}{{ '' if page == 'index' else page }}">
+{% endfor %}
+{% set canonical = "https://" ~ s.domain ~ "/" ~ ('' if lang == s.default_lang else lang ~ '/') ~ ('' if page == 'index' else page) %}
+<link rel="canonical" href="{{ canonical }}">
+<link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ s.name }}">
+<meta property="og:title" content="{{ t.meta.site_title }}">
+<meta property="og:description" content="{{ t.meta.description }}">
+<meta property="og:url" content="{{ canonical }}">
+{% if s.share_image %}<meta property="og:image" content="https://{{ s.domain }}/assets/img/{{ s.share_image }}">
+<meta name="twitter:card" content="summary_large_image">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&{% if lang == 'zh' %}family=Noto+Sans+SC:wght@400;500;700&{% endif %}display=swap">
+<link rel="stylesheet" href="{{ asset('styles.css') }}">
+{% if not preview and s.analytics.provider == 'plausible' %}
+<script defer data-domain="{{ s.analytics.plausible_domain }}" src="https://plausible.io/js/script.tagged-events.js"></script>
+{% elif not preview and s.analytics.provider == 'vercel' %}
+<script defer src="/_vercel/insights/script.js"></script>
+{% endif %}
+{% if not fragment %}
+</head>
+<body class="lang-{{ lang }}">
+{% else %}
+<div class="lang-{{ lang }}">
+{% endif %}
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="{{ url('index', lang) }}" aria-label="Annuit home">
+      {% if s.logo %}<img class="brand-logo" src="{{ asset('img/' ~ s.logo) }}" alt="" width="32" height="32">{% else %}<span class="brand-mark" aria-hidden="true"></span>{% endif %}
+      <span class="brand-word">annuit</span>
+    </a>
+    <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">{{ t.nav.menu }}</button>
+    <nav class="nav-menu" id="nav-menu" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="{{ url('index', lang, 'features') }}">{{ t.nav.features }}</a></li>
+        <li><a href="{{ url('index', lang, 'solutions') }}">{{ t.nav.solutions }}</a></li>
+        <li><a href="{{ url('security', lang) }}">{{ t.nav.security }}</a></li>
+        <li><a href="{{ url('index', lang, 'resources') }}">{{ t.nav.resources }}</a></li>
+        <li><a href="{{ url('pricing', lang) }}">{{ t.nav.pricing }}</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="{{ t.nav.language }}">
+          {% for code, l in s.languages.items() %}
+          <a href="{{ url(page, code) }}" hreflang="{{ l.html_lang }}" lang="{{ l.html_lang }}"{% if code == lang %} aria-current="true"{% endif %}>{{ l.short }}</a>
+          {% endfor %}
+        </div>
+        <a class="link-quiet" href="{{ s.links.sign_in }}" data-track="nav_sign_in">{{ t.nav.sign_in }}</a>
+        <a class="btn btn-ghost" href="{{ url('demo', lang) }}" data-track="nav_book_demo">{{ t.nav.book_demo }}</a>
+        <a class="btn btn-primary" href="{{ s.links.get_started }}" data-track="nav_get_started">{{ t.nav.get_started }}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="{{ url('index', lang) }}">{% if s.logo %}<img class="brand-logo" src="{{ asset('img/' ~ s.logo) }}" alt="" width="32" height="32">{% else %}<span class="brand-mark" aria-hidden="true"></span>{% endif %}<span class="brand-word">annuit</span></a>
+      <p>{{ t.footer.tagline }}</p>
+    </div>
+    <div>
+      <h2 class="footer-h">{{ t.footer.product }}</h2>
+      <ul>
+        <li><a href="{{ url('index', lang, 'features') }}">{{ t.nav.features }}</a></li>
+        <li><a href="{{ url('index', lang, 'solutions') }}">{{ t.nav.solutions }}</a></li>
+        <li><a href="{{ url('security', lang) }}">{{ t.nav.security }}</a></li>
+        <li><a href="{{ url('pricing', lang) }}">{{ t.nav.pricing }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">{{ t.footer.resources }}</h2>
+      <ul>
+        <li><a href="{{ url('index', lang, 'resources') }}">{{ t.footer.customer_stories }}</a></li>
+        <li><a href="{{ url('index', lang, 'resources') }}">{{ t.footer.checklist }}</a></li>
+        <li><a href="{{ url('demo', lang) }}">{{ t.nav.book_demo }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">{{ t.footer.company }}</h2>
+      <ul>
+        <li><a href="{{ url('demo', lang) }}">{{ t.footer.contact }}</a></li>
+        <li><a href="{{ url('privacy', lang) }}">{{ t.footer.privacy }}</a></li>
+        <li><a href="{{ url('terms', lang) }}">{{ t.footer.terms }}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">© {{ year }} {{ s.name }}. {{ t.footer.rights }}</div>
+</footer>
+
+<script src="{{ asset('main.js') }}"></script>
+{% if not fragment %}
+</body>
+</html>
+{% else %}
+</div>
+{% endif %}

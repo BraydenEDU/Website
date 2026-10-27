@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head %}
+{% block title %}{{ t.legal.privacy_title if page == 'privacy' else t.legal.terms_title }} | {{ s.name }}{% endblock %}
+{% block main %}
+{% set heading = t.legal.privacy_title if page == 'privacy' else t.legal.terms_title %}
+{{ page_head(s.name, heading, '') }}
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <p class="muted small">{{ t.legal.updated }}: {{ built }}</p>
+    <div class="placeholder">{{ t.legal.privacy_placeholder if page == 'privacy' else t.legal.terms_placeholder }}</div>
+  </div>
+</section>
+{% endblock %}

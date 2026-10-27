@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head %}
+{% block title %}{{ t.demo_page.title }} | {{ s.name }}{% endblock %}
+{% block main %}
+{{ page_head(t.demo_page.title, t.demo_page.headline, t.demo_page.sub) }}
+<section class="section tight">
+  <div class="wrap demo-grid">
+    <div>
+      {% if s.booking_url %}
+      <p><a class="btn btn-primary btn-lg" href="{{ s.booking_url }}" rel="noopener" target="_blank" data-track="demo_page_booking">{{ t.demo_page.submit }}</a></p>
+      {% else %}
+      <form class="panel demo-form" id="demo-form" novalidate>
+        <label for="demo-name">{{ t.demo_page.name }}</label>
+        <input id="demo-name" name="name" autocomplete="name" required>
+        <label for="demo-firm">{{ t.demo_page.firm }}</label>
+        <input id="demo-firm" name="firm" autocomplete="organization" required>
+        <label for="demo-email">{{ t.demo_page.email }}</label>
+        <input id="demo-email" name="email" type="email" autocomplete="email" required>
+        <label for="demo-clients">{{ t.demo_page.clients }}</label>
+        <select id="demo-clients" name="clients">
+          {% for r in t.demo_page.client_ranges %}<option>{{ r }}</option>{% endfor %}
+        </select>
+        <fieldset>
+          <legend>{{ t.demo_page.client_language }}</legend>
+          {% for code, l in s.languages.items() %}
+          <label class="check"><input type="checkbox" id="demo-lang-{{ code }}" name="client_lang" value="{{ code }}"{% if code == lang %} checked{% endif %}> {{ l.label }}</label>
+          {% endfor %}
+        </fieldset>
+        <button class="btn btn-primary btn-lg" type="submit">{{ t.demo_page.submit }}</button>
+        <p class="form-sent" id="demo-sent" role="status" hidden>{{ t.demo_page.sent }}</p>
+        <p class="small muted">{{ t.demo_page.booking_placeholder }}</p>
+      </form>
+      {% endif %}
+    </div>
+    <aside class="expect">
+      <h2>{{ t.demo_page.expect_title }}</h2>
+      <ul>
+        {% for e in t.demo_page.expect %}<li>{{ e }}</li>{% endfor %}
+      </ul>
+      <h2>{{ t.footer.contact }}</h2>
+      <p><span class="file selectable">{{ s.links.contact_email }}</span></p>
+      <p class="muted small">{{ t.trust.lead }} {{ s.customers | join(', ') }}</p>
+    </aside>
+  </div>
+</section>
+{% endblock %}

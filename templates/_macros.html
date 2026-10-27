@@ -1,0 +1,18 @@
+{% macro pill(status, t) %}<span class="pill pill-{{ status }}">{{ t.status[status] }}</span>{% endmacro %}
+
+{% macro ctas(t, s, url, lang, where) %}
+<div class="cta-row">
+  <a class="btn btn-primary btn-lg" href="{{ url('demo', lang) }}" data-track="{{ where }}_book_demo">{{ t.hero.primary }}</a>
+  <a class="btn btn-ghost btn-lg" href="{{ s.links.get_started }}" data-track="{{ where }}_get_started">{{ t.hero.secondary }}</a>
+</div>
+{% endmacro %}
+
+{% macro page_head(eyebrow, headline, sub) %}
+<section class="page-head">
+  <div class="wrap narrow">
+    <p class="eyebrow">{{ eyebrow }}</p>
+    <h1>{{ headline }}</h1>
+    {% if sub %}<p class="lede">{{ sub }}</p>{% endif %}
+  </div>
+</section>
+{% endmacro %}

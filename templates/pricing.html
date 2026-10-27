@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head, ctas %}
+{% block title %}{{ t.pricing_page.title }} | {{ s.name }}{% endblock %}
+{% block main %}
+{{ page_head(t.pricing_page.title, t.pricing_page.headline, t.pricing_page.sub) }}
+<section class="section tight">
+  <div class="wrap">
+    {% if s.stripe.pricing_table_id and s.stripe.publishable_key %}
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="{{ s.stripe.pricing_table_id }}" publishable-key="{{ s.stripe.publishable_key }}"></stripe-pricing-table>
+    {% else %}
+    <div class="placeholder tall">{{ t.pricing_page.table_placeholder }}</div>
+    {% endif %}
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap narrow">
+    <h2>{{ t.pricing_page.faq_title }}</h2>
+    <div class="faq">
+      {% for f in t.pricing_page.faq %}
+      <details>
+        <summary>{{ f.q }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="closing">
+  <div class="wrap narrow center-ish">
+    <h2>{{ t.cta.headline }}</h2>
+    {{ ctas(t, s, url, lang, 'pricing') }}
+  </div>
+</section>
+{% endblock %}

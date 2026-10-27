@@ -1,0 +1,82 @@
+# Site-wide settings. Words a visitor reads live in content/<lang>.yaml.
+# Anything in [BRACKETS] is a placeholder waiting on Annuit (see README).
+
+name: "Annuit"
+domain: "annuit.com"
+default_lang: "en"
+
+languages:
+  en: { label: "English", short: "EN", html_lang: "en" }
+  es: { label: "Español", short: "ES", html_lang: "es" }
+  zh: { label: "中文", short: "中文", html_lang: "zh-Hans" }
+
+links:
+  sign_in: "https://app.annuit.com"
+  get_started: "https://www.annuit.com/signup"   # [CONFIRM sign-up URL with Annuit]
+  contact_email: "[CONTACT EMAIL]"
+  security_email: "[SECURITY EMAIL]"
+
+# Images. Drop files in static/img/ and put the file name here.
+logo: ""            # e.g. "annuit-owl.svg"  [OWL LOGO]
+share_image: ""     # 1200x630 image shown when the site is shared on LinkedIn, Slack, iMessage
+
+# Trust line
+customers:
+  - "Princeton Tax & Accounting"
+  - "Paul Niu CPA"
+
+# Paste the hosted video URL (mp4) when Annuit supplies the recording.
+demo_video_url: ""
+demo_video_poster: ""
+
+# Customer quote supplied by Annuit. Keep it in the customer's own words.
+testimonial:
+  quote: "[TESTIMONIAL]"
+  name: "[NAME]"
+  title: "[TITLE, FIRM]"
+
+# Stripe embeddable pricing table. Fill both to replace the placeholder.
+stripe:
+  pricing_table_id: ""
+  publishable_key: ""
+
+# Booking tool link for the demo page (Cal.com, Calendly, HubSpot...).
+booking_url: ""
+
+# Analytics: "none", "plausible", or "vercel".
+analytics:
+  provider: "none"
+  plausible_domain: "annuit.com"
+
+# Sample client shown in the product mockups. Fictional data.
+demo_client:
+  name: "Maria Garcia"
+  household: "Garcia household"
+  year: 2025
+  last_year: 2024
+  documents:
+    - { form: "W-2", payer: "Desert Ridge Medical", status: "received" }
+    - { form: "W-2", payer: "Valley Unified School District", status: "received" }
+    - { form: "1099-NEC", payer: "Sonoran Design Co.", status: "received" }
+    - { form: "1098", payer: "First Saguaro Bank", status: "received" }
+    - { form: "Property tax", payer: "Maricopa County", status: "received" }
+    - { form: "1099-INT", payer: "First Saguaro Bank", status: "wrong_year" }
+    - { form: "1099-DIV", payer: "Brokerage account", status: "missing" }
+    - { form: "Childcare receipts", payer: "Little Mesa Preschool", status: "missing" }
+  renames:
+    - { before: "IMG_4471.jpg", after: "2025_Garcia_W-2_DesertRidgeMedical.pdf", flag: false }
+    - { before: "scan0032.pdf", after: "2025_Garcia_1098_FirstSaguaroBank.pdf", flag: false }
+    - { before: "Document (3).pdf", after: "2024_Garcia_1099-INT_FirstSaguaroBank.pdf", flag: true }
+    - { before: "WhatsApp Image 2026-02-03.jpeg", after: "2025_Garcia_PropertyTax_MaricopaCounty.pdf", flag: false }
+
+# The same drafted follow-up in each client language (hero mockup toggle).
+follow_up_messages:
+  en: "Hi Maria, thanks for sending your documents. We still need 2 items to finish your 2025 return: the 1099-DIV from your brokerage account and your childcare receipts. We also received a 2024 1099-INT from First Saguaro Bank. Please send the 2025 version. You can upload everything with the same link."
+  es: "Hola María, gracias por enviar sus documentos. Aún necesitamos 2 documentos para terminar su declaración de 2025: el 1099-DIV de su cuenta de inversiones y los recibos de cuidado infantil. También recibimos un 1099-INT de 2024 de First Saguaro Bank. Por favor envíe la versión de 2025. Puede subir todo con el mismo enlace."
+  zh: "Maria 您好，感谢您提交文件。为完成您的 2025 年报税，我们还需要 2 份文件：您投资账户的 1099-DIV，以及托儿费用收据。另外，我们收到的 First Saguaro Bank 1099-INT 是 2024 年的，请发送 2025 年的版本。您可以通过同一个链接上传所有文件。"
+
+# IRS source used on the Security section and page.
+irs_wisp:
+  quote: "Federal law requires tax and accounting professionals to create and maintain a Written Information Security Plan"
+  source: "IRS news release IR-2026-92, Aug. 18, 2026"
+  url: "https://www.irs.gov/newsroom/irs-security-summit-remind-tax-pros-they-need-a-written-information-security-plan-to-protect-client-data"

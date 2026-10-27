@@ -1,0 +1,9 @@
+# Build output (Vercel rebuilds it on every deploy)
+dist/
+preview/
+.venv/
+__pycache__/
+*.pyc
+.vercel/
+.DS_Store
+design/*.png

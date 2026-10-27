@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pill, ctas %}
+{% block main %}
+{% set c = s.demo_client %}
+
+{# ---------- Hero ---------- #}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ t.hero.eyebrow }}</p>
+      <h1>{{ t.hero.headline }}</h1>
+      <p class="lede">{{ t.hero.sub }}</p>
+      {{ ctas(t, s, url, lang, 'hero') }}
+    </div>
+
+    <div class="product-card" aria-label="{{ t.hero.card_title }}">
+      <div class="pc-head">
+        <div>
+          <p class="pc-client">{{ c.household }} · {{ c.year }}</p>
+          <p class="pc-title">{{ t.hero.card_title }}</p>
+        </div>
+        <p class="pc-progress">{{ t.hero.card_progress | fmt(received=counts.received, total=c.documents | length) }}</p>
+      </div>
+      <div class="meter" aria-hidden="true">
+        <span class="m-received" style="flex: {{ counts.received }}"></span>
+        <span class="m-wrong_year" style="flex: {{ counts.wrong_year }}"></span>
+        <span class="m-missing" style="flex: {{ counts.missing }}"></span>
+      </div>
+      <ul class="pc-list">
+        {% for d in c.documents if d.status != 'received' %}
+        <li>
+          <span class="file">{{ d.form }}</span>
+          <span class="pc-payer">{% if d.status == 'wrong_year' %}{{ t.hero.wrong_year_detail | fmt(year=c.year, last_year=c.last_year) }}{% else %}{{ d.payer }}{% endif %}</span>
+          {{ pill(d.status, t) }}
+        </li>
+        {% endfor %}
+      </ul>
+
+      <div class="draft">
+        <div class="draft-head">
+          <p><strong>{{ t.hero.draft_label }}</strong> <span class="muted">· {{ t.hero.draft_status }}</span></p>
+          <div class="seg" role="tablist" aria-label="{{ t.nav.language }}">
+            {% for code, l in s.languages.items() %}
+            <button type="button" role="tab" id="msg-tab-{{ code }}" aria-controls="msg-{{ code }}" aria-selected="{{ 'true' if code == lang else 'false' }}" data-msg-lang="{{ code }}">{{ l.short }}</button>
+            {% endfor %}
+          </div>
+        </div>
+        {% for code, l in s.languages.items() %}
+        <p class="draft-body" role="tabpanel" id="msg-{{ code }}" aria-labelledby="msg-tab-{{ code }}" lang="{{ l.html_lang }}"{% if code != lang %} hidden{% endif %}>{{ s.follow_up_messages[code] }}</p>
+        {% endfor %}
+        <div class="draft-actions">
+          <span class="btn btn-sm btn-primary" aria-hidden="true">{{ t.hero.approve }}</span>
+          <span class="btn btn-sm btn-ghost" aria-hidden="true">{{ t.hero.edit }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- Trust line ---------- #}
+<section class="trust">
+  <div class="wrap trust-row">
+    <span class="muted">{{ t.trust.lead }}</span>
+    {% for name in s.customers %}<span class="trust-name">{{ name }}</span>{% endfor %}
+  </div>
+</section>
+
+{# ---------- Demo video ---------- #}
+<section class="section" id="demo-video">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ t.video.eyebrow }}</p>
+      <h2>{{ t.video.headline }}</h2>
+    </div>
+    <div class="video">
+      {% if s.demo_video_url %}
+      <video controls preload="metadata" playsinline src="{{ s.demo_video_url }}"{% if s.demo_video_poster %} poster="{{ s.demo_video_poster }}"{% endif %} data-track-video="demo_video"></video>
+      {% else %}
+      <div class="placeholder">{{ t.video.placeholder }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Value strip ---------- #}
+<section class="values" id="features">
+  <div class="wrap values-grid">
+    {% for v in t['values'] %}
+    <div class="value">
+      <h3>{{ v.title }}</h3>
+      <p>{{ v.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ---------- Feature 1: Organize ---------- #}
+<section class="section feature">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <p class="eyebrow">{{ t.organize.eyebrow }}</p>
+      <h2>{{ t.organize.headline }}</h2>
+      <p>{{ t.organize.body }}</p>
+      <p class="mono-note">{{ t.organize.pattern }}</p>
+    </div>
+    <div class="panel renames">
+      <div class="renames-head">
+        <span>{{ t.organize.before }}</span>
+        <span>{{ t.organize.after }}</span>
+      </div>
+      <ol class="rename-list">
+        {% for r in c.renames %}
+        <li{% if r.flag %} class="flagged"{% endif %}>
+          <span class="file before">{{ r.before }}</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span class="file after">{{ r.after }}{% if r.flag %} <span class="pill pill-wrong_year">{{ t.organize.flag }}</span>{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ol>
+      <p class="folder file">{{ t.organize.folder }}</p>
+    </div>
+  </div>
+</section>
+
+{# ---------- Feature 2: Track ---------- #}
+<section class="section feature alt">
+  <div class="wrap feature-grid reverse">
+    <div class="feature-copy">
+      <p class="eyebrow">{{ t.track.eyebrow }}</p>
+      <h2>{{ t.track.headline }}</h2>
+      <p>{{ t.track.body }}</p>
+    </div>
+    <div class="panel">
+      <div class="checklist-head">
+        <span>{{ t.track.summary | fmt(last_year=c.last_year) }}</span>
+        <span class="counts">
+          {{ pill('received', t) }} {{ counts.received }}
+          {{ pill('wrong_year', t) }} {{ counts.wrong_year }}
+          {{ pill('missing', t) }} {{ counts.missing }}
+        </span>
+      </div>
+      <div class="table-scroll">
+        <table class="checklist">
+          <thead><tr><th>{{ t.track.col_document }}</th><th>{{ t.track.col_from }}</th><th>{{ t.track.col_status }}</th></tr></thead>
+          <tbody>
+            {% for d in c.documents %}
+            <tr class="row-{{ d.status }}"><td class="file">{{ d.form }}</td><td>{{ d.payer }}</td><td>{{ pill(d.status, t) }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- Solutions ---------- #}
+<section class="section" id="solutions">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ t.solutions.eyebrow }}</p>
+      <h2>{{ t.solutions.headline }}</h2>
+    </div>
+    <ol class="steps">
+      {% for item in t.solutions['items'] %}
+      <li class="step">
+        <span class="step-n">{{ loop.index }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ---------- Languages ---------- #}
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <p class="eyebrow">{{ t.languages.eyebrow }}</p>
+      <h2>{{ t.languages.headline }}</h2>
+      <p>{{ t.languages.body }}</p>
+    </div>
+    <p class="hello" aria-hidden="true"><span lang="en">Hi Maria</span><span lang="es">Hola María</span><span lang="zh-Hans">Maria 您好</span></p>
+  </div>
+</section>
+
+{# ---------- Calculator ---------- #}
+<section class="section" id="calculator">
+  <div class="wrap calc">
+    <div class="calc-copy">
+      <p class="eyebrow">{{ t.calculator.eyebrow }}</p>
+      <h2>{{ t.calculator.headline }}</h2>
+    </div>
+    <form class="calc-form panel" id="calc-form" novalidate>
+      <label for="calc-clients">{{ t.calculator.clients }}</label>
+      <input id="calc-clients" type="number" inputmode="numeric" min="1" max="20000" value="250">
+      <label for="calc-rounds">{{ t.calculator.rounds }}</label>
+      <input id="calc-rounds" type="number" inputmode="decimal" min="0" max="20" step="0.5" value="2">
+      <label for="calc-minutes">{{ t.calculator.minutes }}</label>
+      <input id="calc-minutes" type="number" inputmode="numeric" min="1" max="240" value="15">
+      <div class="calc-result" aria-live="polite">
+        <span class="calc-lead">{{ t.calculator.result_lead }}</span>
+        <output id="calc-hours" for="calc-clients calc-rounds calc-minutes">125</output>
+      </div>
+      <p class="small muted">{{ t.calculator.result_note }}</p>
+      <a class="btn btn-primary" href="{{ url('demo', lang) }}" data-track="calculator_book_demo">{{ t.calculator.cta }}</a>
+    </form>
+  </div>
+</section>
+
+{# ---------- Security ---------- #}
+<section class="section security alt" id="security">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ t.security.eyebrow }}</p>
+      <h2>{{ t.security.headline }}</h2>
+      <p class="lede" style="margin-top:14px">{{ t.security.sub }}</p>
+    </div>
+    <blockquote class="irs">
+      <p><span class="muted">{{ t.security.quote_lead }}</span> “{{ s.irs_wisp.quote }}.”</p>
+      <cite><a href="{{ s.irs_wisp.url }}" rel="noopener" target="_blank">{{ s.irs_wisp.source }}</a></cite>
+    </blockquote>
+    <ul class="proof">
+      {% for p in t.security.points %}
+      <li>
+        <h3>{{ p.title }} <span class="verify" title="Confirm with Annuit before launch">{{ t.security.verify }}</span></h3>
+        <p>{{ p.body }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <p><a class="link-arrow" href="{{ url('security', lang) }}">{{ t.security.more }} →</a></p>
+  </div>
+</section>
+
+{# ---------- Testimonial ---------- #}
+<section class="section testimonial">
+  <div class="wrap narrow">
+    <p class="eyebrow">{{ t.testimonial.eyebrow }}</p>
+    <blockquote>
+      <p class="quote">“{{ s.testimonial.quote }}”</p>
+      <footer><strong>{{ s.testimonial.name }}</strong><br><span class="muted">{{ s.testimonial.title }}</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+{# ---------- Resources ---------- #}
+<section class="section" id="resources">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ t.resources.eyebrow }}</p>
+      <h2>{{ t.resources.headline }}</h2>
+    </div>
+    <div class="resources">
+      {% for r in t.resources['items'] %}
+      <article class="resource panel">
+        <p class="eyebrow">{{ r.kind }}</p>
+        <h3>{{ r.title }}</h3>
+        <p class="muted small">{{ r.status }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Closing CTA ---------- #}
+<section class="section alt" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ t.nav.pricing }}</p>
+      <h2>{{ t.pricing_page.headline }}</h2>
+    </div>
+    {% if s.stripe.pricing_table_id and s.stripe.publishable_key %}
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="{{ s.stripe.pricing_table_id }}" publishable-key="{{ s.stripe.publishable_key }}"></stripe-pricing-table>
+    {% else %}
+    <div class="placeholder">{{ t.pricing_page.table_placeholder }}</div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap narrow center-ish">
+    <h2>{{ t.cta.headline }}</h2>
+    <p class="lede">{{ t.cta.sub }}</p>
+    {{ ctas(t, s, url, lang, 'closing') }}
+    <p><a class="link-arrow" href="{{ url('pricing', lang) }}" data-track="closing_pricing">{{ t.cta.pricing_link }} →</a></p>
+  </div>
+</section>
+{% endblock %}
