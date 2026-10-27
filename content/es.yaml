@@ -1,0 +1,203 @@
+# Spanish copy. Draft translation: have a native speaker review before launch.
+# Keys missing here fall back to en.yaml.
+
+meta:
+  site_title: "Annuit | Recolección de documentos para preparadores de impuestos"
+  description: "Annuit solicita, archiva y revisa los documentos fiscales de sus clientes en inglés, español y chino, y prepara el seguimiento para su aprobación."
+
+nav:
+  features: "Funciones"
+  solutions: "Soluciones"
+  security: "Seguridad"
+  resources: "Recursos"
+  pricing: "Precios"
+  sign_in: "Iniciar sesión"
+  book_demo: "Agendar demo"
+  get_started: "Comenzar"
+  menu: "Menú"
+  language: "Idioma"
+
+status:
+  received: "Recibido"
+  wrong_year: "Año incorrecto"
+  missing: "Falta"
+
+hero:
+  eyebrow: "Recolección de documentos para preparadores de impuestos"
+  headline: "Deje de perseguir documentos."
+  sub: "Annuit solicita, archiva y revisa cada documento de sus clientes en English, Español y 中文. Nada llega a un cliente sin su aprobación."
+  primary: "Agendar demo"
+  secondary: "Comenzar"
+  card_title: "Esperados según la declaración anterior"
+  card_progress: "{received} de {total} recibidos"
+  draft_label: "Seguimiento preparado"
+  draft_status: "Esperando su aprobación"
+  approve: "Aprobar y enviar"
+  edit: "Editar"
+  wrong_year_detail: "Formulario {last_year} en el archivo {year}"
+
+trust:
+  lead: "Con la confianza de firmas como"
+
+video:
+  eyebrow: "Demo"
+  headline: "Una temporada de impuestos en dos minutos"
+  placeholder: "[VIDEO DEMO] Grabación de 2 minutos proporcionada por Annuit"
+
+values:
+  - title: "Archivado en cuanto llega"
+    body: "PDFs, fotos del teléfono y escaneos van al cliente y año fiscal correctos, con la nomenclatura de su firma."
+  - title: "Faltantes detectados en enero, no en abril"
+    body: "Annuit compara lo recibido con los documentos del año pasado y le muestra lo que aún falta."
+  - title: "Formularios incorrectos detectados a tiempo"
+    body: "Un formulario de 2024 en el archivo de 2025 se marca antes de llegar a la declaración."
+
+organize:
+  eyebrow: "Organizar"
+  headline: "Ordenado por su contenido, no por el nombre del archivo"
+  body: "Annuit lee cada documento, identifica el formulario, el pagador y el año fiscal, y lo archiva en la carpeta correcta con el nombre que usted elija."
+  before: "Lo que envió el cliente"
+  after: "Lo que llega a su carpeta"
+  flag: "Año incorrecto"
+  pattern: "Formato: Año_Cliente_Formulario_Pagador. Configure el suyo."
+  folder: "Garcia, Maria / 2025 / Ingresos"
+
+track:
+  eyebrow: "Seguimiento"
+  headline: "Sepa qué falta antes que su cliente"
+  body: "Annuit crea una lista de documentos esperados a partir de la declaración del año pasado. Cada elemento aparece como recibido, año incorrecto o faltante, para que el seguimiento empiece el primer día y no la semana antes del plazo."
+  col_document: "Documento"
+  col_from: "Emisor"
+  col_status: "Estado"
+  summary: "Esperados según la declaración {last_year}"
+
+solutions:
+  eyebrow: "Soluciones"
+  headline: "Hecho para preparadores de impuestos"
+  items:
+    - title: "Recepción"
+      body: "Envíe la solicitud de documentos en el idioma de su cliente. Sus clientes mandan PDFs, escaneos o fotos, como los tengan."
+    - title: "Revisión"
+      body: "Cada archivo se lee, se nombra y se archiva bajo el cliente y año correctos, y se compara con los documentos del año pasado."
+    - title: "Seguimiento"
+      body: "Annuit redacta la solicitud de lo que falta o está mal. Usted la aprueba antes de que salga."
+
+languages:
+  eyebrow: "Idiomas"
+  headline: "El idioma de su cliente, de la primera solicitud al último recordatorio"
+  body: "Configure un cliente en español o chino y la interfaz y cada mensaje que Annuit redacta cambian con él. Hecho desde el primer día para firmas que atienden a familias hispanohablantes y de habla china."
+
+calculator:
+  eyebrow: "Calcule"
+  headline: "¿Cuántas horas le cuesta perseguir documentos cada temporada?"
+  clients: "Clientes por temporada"
+  rounds: "Rondas de seguimiento por cliente"
+  minutes: "Minutos por ronda"
+  result_lead: "Horas dedicadas a perseguir documentos"
+  result_note: "Es su estimación, con sus propios números. Annuit redacta cada seguimiento; usted lo revisa y aprueba."
+  cta: "Vea cómo lo resuelve Annuit"
+
+security:
+  eyebrow: "Seguridad"
+  headline: "Hecho para encajar en el plan de seguridad que ya le exige el IRS"
+  sub: "Los documentos de sus clientes son privados, están cifrados y son suyos."
+  quote_lead: "Según el IRS (en inglés):"
+  points:
+    - title: "Cifrado en tránsito y en reposo"
+      body: "Los documentos se cifran al subirse y mientras están almacenados."
+    - title: "Solo su firma tiene acceso"
+      body: "Los clientes y archivos de cada firma están separados, y solo acceden las personas que usted agrega."
+    - title: "Usted aprueba cada mensaje"
+      body: "Annuit redacta. Nada llega a un cliente hasta que un preparador lo revisa y lo envía."
+    - title: "Sus datos son suyos"
+      body: "Exporte o elimine los documentos de su firma cuando lo necesite."
+  more: "Lea cómo Annuit protege los datos de sus clientes"
+
+testimonial:
+  eyebrow: "Lo que dice un cliente"
+
+resources:
+  eyebrow: "Recursos"
+  headline: "Empiece aquí"
+  items:
+    - kind: "Caso de cliente"
+      title: "[CASO DE CLIENTE] Cómo Princeton Tax & Accounting recibe documentos con Annuit"
+      status: "Próximamente"
+    - kind: "Descarga gratuita"
+      title: "Lista de documentos para clientes en inglés, español y chino"
+      status: "Próximamente"
+
+cta:
+  headline: "Prepárese antes de que llegue el primer cliente con su caja de recibos."
+  sub: "Agende una demo y le mostraremos un cliente de ejemplo, desde la primera solicitud hasta el seguimiento aprobado."
+  pricing_link: "Ver precios"
+
+footer:
+  tagline: "Recolección de documentos para preparadores de impuestos."
+  product: "Producto"
+  resources: "Recursos"
+  company: "Empresa"
+  customer_stories: "Casos de clientes"
+  checklist: "Lista de documentos"
+  contact: "Contacto"
+  privacy: "Privacidad"
+  terms: "Términos"
+  rights: "Todos los derechos reservados."
+
+pricing_page:
+  title: "Precios"
+  headline: "Precios simples para firmas de todos los tamaños"
+  sub: "[TEXTO FINAL DE PRECIOS]"
+  table_placeholder: "[TABLA DE PRECIOS STRIPE] Annuit genera el código en el panel de Stripe."
+  faq_title: "Preguntas"
+  faq:
+    - q: "¿Annuit reemplaza mi software de impuestos?"
+      a: "No. Annuit se encarga de recolectar, organizar y revisar documentos antes de la preparación. Siga usando su software actual."
+    - q: "¿Qué idiomas admite Annuit?"
+      a: "Inglés, español y chino. Elija el idioma de cada cliente y todos los mensajes que Annuit redacte para él lo usarán."
+    - q: "¿Puedo verlo antes de comprar?"
+      a: "Sí. Agende una demo y revisaremos un cliente de ejemplo con usted."
+    - q: "¿Dónde se guardan los documentos de mis clientes?"
+      a: "Consulte la página de Seguridad para ver cómo Annuit guarda y protege los datos."
+
+security_page:
+  title: "Seguridad"
+  headline: "Los documentos de sus clientes son privados, están cifrados y son suyos"
+  sub: "Los preparadores de impuestos son responsables de los datos de sus clientes. Así le ayuda Annuit a cumplir con esa responsabilidad."
+  wisp_title: "Annuit y su Plan Escrito de Seguridad de la Información (WISP)"
+  wisp_body: "Para efectos de seguridad de datos, los profesionales de impuestos se consideran instituciones financieras y deben mantener un plan escrito para proteger los datos de sus clientes. Annuit es uno de los sistemas que ese plan cubre. Puede citar los detalles a continuación en su plan."
+  human_title: "Un preparador aprueba cada mensaje"
+  human_body: "Annuit lee documentos y redacta seguimientos. Nunca envía nada a un cliente por su cuenta. Cada solicitud sale solo después de que alguien de su firma la revisa."
+  contact_title: "Preguntas de seguridad"
+  contact_body: "Escriba a nuestro equipo y le responderemos en dos días hábiles:"
+  source: "Fuente"
+
+demo_page:
+  title: "Agendar demo"
+  headline: "Vea Annuit con un cliente de ejemplo"
+  sub: "Recorreremos un ciclo completo: la primera solicitud, la llegada de archivos, la lista que se completa y el seguimiento que usted aprueba."
+  name: "Su nombre"
+  firm: "Nombre de la firma"
+  email: "Correo de trabajo"
+  clients: "Clientes por temporada"
+  client_ranges: ["Menos de 100", "De 100 a 300", "De 300 a 1,000", "Más de 1,000"]
+  client_language: "Idiomas que prefieren sus clientes"
+  submit: "Solicitar demo"
+  sent: "Gracias. Le escribiremos para elegir un horario."
+  booking_placeholder: "[CALENDARIO DE CITAS] Conecte Cal.com, Calendly o HubSpot aquí."
+  expect_title: "Qué esperar"
+  expect:
+    - "Un recorrido breve con un cliente de ejemplo"
+    - "Tiempo para preguntas sobre su proceso de recepción"
+    - "Ayuda para configurar sus primeros clientes si quiere empezar"
+
+legal:
+  privacy_title: "Política de privacidad"
+  terms_title: "Términos del servicio"
+  privacy_placeholder: "[TEXTO DE POLÍTICA DE PRIVACIDAD] Proporcionado por Annuit."
+  terms_placeholder: "[TEXTO DE TÉRMINOS DEL SERVICIO] Proporcionado por Annuit."
+  updated: "Última actualización"
+
+not_found:
+  headline: "Esta página falta, como un 1099 en marzo."
+  sub: "La página que buscaba se movió o no existe."

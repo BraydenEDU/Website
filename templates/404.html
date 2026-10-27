@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head, ctas %}
+{% block title %}404 | {{ s.name }}{% endblock %}
+{% block main %}
+{{ page_head("404", t.not_found.headline, t.not_found.sub) }}
+<section class="section tight"><div class="wrap narrow">{{ ctas(t, s, url, lang, 'not_found') }}</div></section>
+{% endblock %}

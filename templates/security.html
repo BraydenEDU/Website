@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head, ctas %}
+{% block title %}{{ t.security_page.title }} | {{ s.name }}{% endblock %}
+{% block main %}
+{{ page_head(t.security_page.title, t.security_page.headline, t.security_page.sub) }}
+<section class="section tight">
+  <div class="wrap narrow prose">
+    <h2>{{ t.security_page.wisp_title }}</h2>
+    <p>{{ t.security_page.wisp_body }}</p>
+    <blockquote class="irs">
+      <p><span class="muted">{{ t.security.quote_lead }}</span> “{{ s.irs_wisp.quote }}.”</p>
+      <cite>{{ t.security_page.source }}: <a href="{{ s.irs_wisp.url }}" rel="noopener" target="_blank">{{ s.irs_wisp.source }}</a></cite>
+    </blockquote>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap">
+    <ul class="proof">
+      {% for p in t.security.points %}
+      <li>
+        <h3>{{ p.title }} <span class="verify" title="Confirm with Annuit before launch">{{ t.security.verify }}</span></h3>
+        <p>{{ p.body }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap narrow prose">
+    <h2>{{ t.security_page.human_title }}</h2>
+    <p>{{ t.security_page.human_body }}</p>
+    <h2>{{ t.security_page.contact_title }}</h2>
+    <p>{{ t.security_page.contact_body }} <span class="file selectable">{{ s.links.security_email }}</span></p>
+  </div>
+</section>
+<section class="closing">
+  <div class="wrap narrow center-ish">
+    <h2>{{ t.cta.headline }}</h2>
+    {{ ctas(t, s, url, lang, 'security') }}
+  </div>
+</section>
+{% endblock %}

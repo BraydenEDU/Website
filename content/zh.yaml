@@ -1,0 +1,203 @@
+# Simplified Chinese copy. Draft translation: have a native speaker review before launch.
+# Keys missing here fall back to en.yaml.
+
+meta:
+  site_title: "Annuit | 报税师的客户文件收集工具"
+  description: "Annuit 以英文、西班牙文和中文向客户索取、归档并核对报税文件，并起草跟进消息供您审批。"
+
+nav:
+  features: "功能"
+  solutions: "解决方案"
+  security: "安全"
+  resources: "资源"
+  pricing: "价格"
+  sign_in: "登录"
+  book_demo: "预约演示"
+  get_started: "开始使用"
+  menu: "菜单"
+  language: "语言"
+
+status:
+  received: "已收到"
+  wrong_year: "年份错误"
+  missing: "缺失"
+
+hero:
+  eyebrow: "报税师的文件收集工具"
+  headline: "不再追着客户要文件。"
+  sub: "Annuit 用 English、Español 和中文索取、归档并核对每一份客户文件。未经您批准，任何内容都不会发给客户。"
+  primary: "预约演示"
+  secondary: "开始使用"
+  card_title: "根据去年报税表应收文件"
+  card_progress: "已收到 {received} / {total}"
+  draft_label: "已起草的跟进消息"
+  draft_status: "等待您批准"
+  approve: "批准并发送"
+  edit: "编辑"
+  wrong_year_detail: "{year} 年档案中有 {last_year} 年表格"
+
+trust:
+  lead: "信赖我们的事务所包括"
+
+video:
+  eyebrow: "演示"
+  headline: "两分钟看完一个报税季"
+  placeholder: "[演示视频] 由 Annuit 提供的 2 分钟屏幕录像"
+
+values:
+  - title: "文件一到即归档"
+    body: "PDF、手机照片和扫描件按事务所的命名规则，归入正确的客户和报税年度。"
+  - title: "一月就发现缺件，而不是四月"
+    body: "Annuit 将收到的文件与去年的文件对比，列出仍未收到的项目。"
+  - title: "及早发现错误表格"
+    body: "2025 年档案中出现 2024 年表格时，会在进入报税前被标记。"
+
+organize:
+  eyebrow: "整理"
+  headline: "按内容整理，而不是按文件名"
+  body: "Annuit 读取每份文件，识别表格类型、发放方和报税年度，然后按您的规则命名并存入正确的客户文件夹。"
+  before: "客户发来的文件"
+  after: "存入您文件夹的结果"
+  flag: "年份错误"
+  pattern: "命名规则：年份_客户_表格_发放方。可自行设置。"
+  folder: "Garcia, Maria / 2025 / 收入"
+
+track:
+  eyebrow: "追踪"
+  headline: "在客户之前就知道缺什么"
+  body: "Annuit 根据去年的报税表生成应收文件清单。每项显示已收到、年份错误或缺失，让跟进从第一天开始，而不是截止前一周。"
+  col_document: "文件"
+  col_from: "发放方"
+  col_status: "状态"
+  summary: "根据 {last_year} 年报税表应收文件"
+
+solutions:
+  eyebrow: "解决方案"
+  headline: "为报税师打造"
+  items:
+    - title: "收件"
+      body: "用客户的语言发送文件索取请求。客户可以发送 PDF、扫描件或手机照片，有什么发什么。"
+    - title: "审核"
+      body: "每个文件都会被读取、命名并归入正确的客户和年度，再与去年的文件核对。"
+    - title: "跟进"
+      body: "Annuit 起草缺失或错误文件的索取消息。经您批准后才会发出。"
+
+languages:
+  eyebrow: "语言"
+  headline: "从第一次索取到最后一次提醒，都用客户的语言"
+  body: "将客户设为西班牙语或中文，界面和 Annuit 生成的每条消息都会随之切换。从第一天起就为服务西语和华人家庭的事务所设计。"
+
+calculator:
+  eyebrow: "估算"
+  headline: "每个报税季，追文件要花您多少小时？"
+  clients: "每季客户数"
+  rounds: "每位客户的跟进次数"
+  minutes: "每次跟进分钟数"
+  result_lead: "追文件所花的小时数"
+  result_note: "这是根据您自己的数字得出的估算。Annuit 起草每条跟进消息，由您审核批准。"
+  cta: "看看 Annuit 怎么处理"
+
+security:
+  eyebrow: "安全"
+  headline: "契合您按 IRS 要求必须制定的安全计划"
+  sub: "客户文件私密、加密，并且归您所有。"
+  quote_lead: "IRS 表示（英文原文）："
+  points:
+    - title: "传输和存储均加密"
+      body: "客户文件在上传过程中和存储期间都经过加密。"
+    - title: "仅限您的事务所访问"
+      body: "各事务所的客户和文件相互隔离，只有您添加的人员可以访问。"
+    - title: "每条消息由您批准"
+      body: "Annuit 只负责起草。报税师审核并发送之前，任何内容都不会到达客户。"
+    - title: "数据归您所有"
+      body: "需要时可导出或删除事务所的文件。"
+  more: "了解 Annuit 如何保护客户数据"
+
+testimonial:
+  eyebrow: "客户评价"
+
+resources:
+  eyebrow: "资源"
+  headline: "从这里开始"
+  items:
+    - kind: "客户案例"
+      title: "[客户案例] Princeton Tax & Accounting 如何用 Annuit 收件"
+      status: "即将推出"
+    - kind: "免费下载"
+      title: "英文、西班牙文、中文版客户文件清单"
+      status: "即将推出"
+
+cta:
+  headline: "在第一位客户抱着一盒单据上门前，就准备好。"
+  sub: "预约演示，我们将带您走完一个示例客户的全过程，从第一次索取到批准跟进。"
+  pricing_link: "查看价格"
+
+footer:
+  tagline: "报税师的文件收集工具。"
+  product: "产品"
+  resources: "资源"
+  company: "公司"
+  customer_stories: "客户案例"
+  checklist: "文件清单"
+  contact: "联系我们"
+  privacy: "隐私"
+  terms: "条款"
+  rights: "版权所有。"
+
+pricing_page:
+  title: "价格"
+  headline: "适合各种规模事务所的简单定价"
+  sub: "[最终价格文案]"
+  table_placeholder: "[STRIPE 价格表] 由 Annuit 在 Stripe 后台生成嵌入代码。"
+  faq_title: "常见问题"
+  faq:
+    - q: "Annuit 会取代我的报税软件吗？"
+      a: "不会。Annuit 负责报税前的文件收集、整理和核对。请继续使用您现有的报税软件。"
+    - q: "Annuit 支持哪些语言？"
+      a: "英文、西班牙文和中文。为每位客户选择语言后，Annuit 为其起草的所有消息都会使用该语言。"
+    - q: "购买前可以先看看吗？"
+      a: "可以。预约演示，我们会和您一起看一个示例客户。"
+    - q: "客户文件存储在哪里？"
+      a: "请查看安全页面，了解 Annuit 如何存储和保护客户数据。"
+
+security_page:
+  title: "安全"
+  headline: "客户文件私密、加密，并且归您所有"
+  sub: "报税师对所持有的客户数据负有责任。以下是 Annuit 如何帮助您履行这一责任。"
+  wisp_title: "Annuit 与您的书面信息安全计划（WISP）"
+  wisp_body: "在数据安全方面，报税专业人士被视为金融机构，必须制定保护客户数据的书面计划。Annuit 是该计划涵盖的系统之一。您可以在计划中引用以下内容。"
+  human_title: "每条消息都由报税师批准"
+  human_body: "Annuit 读取文件并起草跟进消息，但从不自行向客户发送任何内容。每个请求都要经过事务所人员审核后才会发出。"
+  contact_title: "安全问题"
+  contact_body: "请发邮件给我们的团队，我们会在两个工作日内回复："
+  source: "来源"
+
+demo_page:
+  title: "预约演示"
+  headline: "通过示例客户了解 Annuit"
+  sub: "我们将演示完整流程：第一次索取文件、文件陆续到达、清单逐步完成，以及由您批准的跟进消息。"
+  name: "您的姓名"
+  firm: "事务所名称"
+  email: "工作邮箱"
+  clients: "每季客户数"
+  client_ranges: ["少于 100", "100 至 300", "300 至 1,000", "超过 1,000"]
+  client_language: "客户偏好的语言"
+  submit: "申请演示"
+  sent: "谢谢。我们会发邮件与您约定时间。"
+  booking_placeholder: "[预约日历] 在此连接 Cal.com、Calendly 或 HubSpot。"
+  expect_title: "演示内容"
+  expect:
+    - "用真实示例客户进行简短演示"
+    - "解答您关于收件流程的问题"
+    - "如需开始使用，协助设置您的首批客户"
+
+legal:
+  privacy_title: "隐私政策"
+  terms_title: "服务条款"
+  privacy_placeholder: "[隐私政策文本] 由 Annuit 提供。"
+  terms_placeholder: "[服务条款文本] 由 Annuit 提供。"
+  updated: "最后更新"
+
+not_found:
+  headline: "此页面不见了，就像三月还没收到的 1099。"
+  sub: "您要找的页面已移动或不存在。"

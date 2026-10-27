@@ -1,0 +1,204 @@
+# English copy. Every word a visitor reads on the site is here.
+# es.yaml and zh.yaml use the same keys; any key they leave out falls back to this file.
+
+meta:
+  site_title: "Annuit | Client document collection for tax preparers"
+  description: "Annuit requests, files, and checks client tax documents in English, Spanish, and Chinese, then drafts the follow-up for your approval."
+
+nav:
+  features: "Features"
+  solutions: "Solutions"
+  security: "Security"
+  resources: "Resources"
+  pricing: "Pricing"
+  sign_in: "Sign in"
+  book_demo: "Book a demo"
+  get_started: "Get started"
+  menu: "Menu"
+  language: "Language"
+
+status:
+  received: "Received"
+  wrong_year: "Wrong year"
+  missing: "Missing"
+
+hero:
+  eyebrow: "Document collection for tax preparers"
+  headline: "Stop chasing client documents."
+  sub: "Annuit requests, files, and checks every client document in English, Español, and 中文. Nothing goes to a client until you approve it."
+  primary: "Book a demo"
+  secondary: "Get started"
+  card_title: "Expected from last year's return"
+  card_progress: "{received} of {total} received"
+  draft_label: "Drafted follow-up"
+  draft_status: "Waiting for your approval"
+  approve: "Approve and send"
+  edit: "Edit"
+  wrong_year_detail: "{last_year} form in a {year} file"
+
+trust:
+  lead: "Trusted by firms like"
+
+video:
+  eyebrow: "Demo"
+  headline: "One tax season, in two minutes"
+  placeholder: "[DEMO VIDEO] 2-minute screen recording supplied by Annuit"
+
+values:
+  - title: "Filed the moment it lands"
+    body: "PDFs, phone photos, and scans go to the right client and tax year under your firm's naming convention."
+  - title: "Missing forms flagged in January, not April"
+    body: "Annuit compares what arrived with last year's documents and lists what is still out."
+  - title: "Wrong forms caught early"
+    body: "A 2024 form in a 2025 file gets flagged before it reaches the return."
+
+organize:
+  eyebrow: "Organize"
+  headline: "Sorted by what's inside, not what the file is called"
+  body: "Annuit reads each document, identifies the form, the payer, and the tax year, then files it in the right client folder and names it your way."
+  before: "What the client sent"
+  after: "What lands in your folder"
+  flag: "Wrong year"
+  pattern: "Naming pattern: Year_Client_Form_Payer. Set your own."
+  folder: "Garcia, Maria / 2025 / Income"
+
+track:
+  eyebrow: "Track"
+  headline: "Know what's missing before your client does"
+  body: "Annuit builds an expected-documents checklist from last year's return. Each item shows received, wrong year, or missing, so follow-up starts on day one instead of the week before the deadline."
+  col_document: "Document"
+  col_from: "From"
+  col_status: "Status"
+  summary: "Expected from {last_year} return"
+
+solutions:
+  eyebrow: "Solutions"
+  headline: "Built for tax preparers"
+  items:
+    - title: "Intake"
+      body: "Send the document request in your client's language. Clients send PDFs, scans, or phone photos, however they have them."
+    - title: "Review"
+      body: "Every file is read, named, and filed under the right client and year, then checked against last year's documents."
+    - title: "Follow-up"
+      body: "Annuit drafts the request for what is missing or wrong. You approve it before anything goes out."
+
+languages:
+  eyebrow: "Languages"
+  headline: "Your client's language, from first request to final reminder"
+  body: "Set a client to Spanish or Chinese and the interface and every message Annuit writes switch with them. Built for firms serving Spanish- and Chinese-speaking families from day one."
+
+calculator:
+  eyebrow: "Estimate"
+  headline: "How many hours does document chasing cost you each season?"
+  clients: "Clients per season"
+  rounds: "Follow-up rounds per client"
+  minutes: "Minutes per round"
+  result_lead: "Hours spent chasing documents"
+  result_note: "This is your estimate from your own numbers. Annuit drafts each follow-up; you review and approve."
+  cta: "See how Annuit handles it"
+
+security:
+  eyebrow: "Security"
+  headline: "Built to fit the security plan you already owe the IRS"
+  sub: "Client documents stay private, encrypted, and yours."
+  quote_lead: "The IRS says:"
+  verify: "[VERIFY]"
+  points:
+    - title: "Encrypted in transit and at rest"
+      body: "Client documents are encrypted while they upload and while they are stored."
+    - title: "Only your firm has access"
+      body: "Each firm's clients and files are separated, and access is limited to people you add."
+    - title: "You approve every message"
+      body: "Annuit drafts. Nothing reaches a client until a preparer reviews and sends it."
+    - title: "Your data stays yours"
+      body: "Export or delete your firm's documents when you need to."
+  more: "Read how Annuit protects client data"
+
+testimonial:
+  eyebrow: "From a customer"
+
+resources:
+  eyebrow: "Resources"
+  headline: "Start here"
+  items:
+    - kind: "Customer story"
+      title: "[CUSTOMER STORY] How Princeton Tax & Accounting runs intake with Annuit"
+      status: "Coming soon"
+    - kind: "Free download"
+      title: "Client document checklist in English, Spanish, and Chinese"
+      status: "Coming soon"
+
+cta:
+  headline: "Get set up before your first client walks in with a shoebox."
+  sub: "Book a demo and we'll walk through a sample client, from first request to approved follow-up."
+  pricing_link: "See pricing"
+
+footer:
+  tagline: "Document collection for tax preparers."
+  product: "Product"
+  resources: "Resources"
+  company: "Company"
+  customer_stories: "Customer stories"
+  checklist: "Document checklist"
+  contact: "Contact"
+  privacy: "Privacy"
+  terms: "Terms"
+  rights: "All rights reserved."
+
+pricing_page:
+  title: "Pricing"
+  headline: "Simple pricing for firms of every size"
+  sub: "[FINAL PRICING WORDING]"
+  table_placeholder: "[STRIPE PRICING TABLE] Annuit generates the embed in the Stripe Dashboard."
+  faq_title: "Questions"
+  faq:
+    - q: "Does Annuit replace my tax software?"
+      a: "No. Annuit handles collecting, organizing, and checking documents before preparation. Keep the tax software you already use."
+    - q: "Which languages does Annuit support?"
+      a: "English, Spanish, and Chinese. Pick a language per client and every message Annuit drafts for them uses it."
+    - q: "Can I see it before I buy?"
+      a: "Yes. Book a demo and we'll walk through a sample client with you."
+    - q: "Where are my clients' documents stored?"
+      a: "See the Security page for how Annuit stores and protects client data."
+
+security_page:
+  title: "Security"
+  headline: "Client documents stay private, encrypted, and yours"
+  sub: "Tax preparers are responsible for the client data they hold. Here is how Annuit helps you meet that responsibility."
+  wisp_title: "Annuit and your Written Information Security Plan"
+  wisp_body: "Tax professionals are treated as financial institutions for data security purposes and must keep a written plan for protecting client data. Annuit is one of the systems that plan covers. The details below are what you can reference in it."
+  human_title: "A preparer approves every message"
+  human_body: "Annuit reads documents and drafts follow-ups. It never sends anything to a client on its own. Every request goes out only after someone at your firm reviews it."
+  contact_title: "Security questions"
+  contact_body: "Email our team and we'll answer within two business days:"
+  source: "Source"
+
+demo_page:
+  title: "Book a demo"
+  headline: "See Annuit with a sample client"
+  sub: "We'll walk through a full cycle: the first document request, files arriving, the checklist filling in, and the follow-up you approve."
+  name: "Your name"
+  firm: "Firm name"
+  email: "Work email"
+  clients: "Clients per season"
+  client_ranges: ["Under 100", "100 to 300", "300 to 1,000", "Over 1,000"]
+  client_language: "Languages your clients prefer"
+  submit: "Request a demo"
+  sent: "Thanks. We'll email you to pick a time."
+  booking_placeholder: "[BOOKING EMBED] Connect Cal.com, Calendly, or HubSpot here."
+  expect_title: "What to expect"
+  expect:
+    - "A short walkthrough with a real sample client"
+    - "Time for questions about your intake process"
+    - "Help setting up your first clients if you want to start"
+
+legal:
+  privacy_title: "Privacy Policy"
+  terms_title: "Terms of Service"
+  privacy_placeholder: "[PRIVACY POLICY TEXT] Supplied by Annuit."
+  terms_placeholder: "[TERMS OF SERVICE TEXT] Supplied by Annuit."
+  updated: "Last updated"
+
+not_found:
+  headline: "This page is missing, like a 1099 in March."
+  sub: "The page you were looking for has moved or never existed."
